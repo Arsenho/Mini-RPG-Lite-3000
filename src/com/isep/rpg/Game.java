@@ -6,16 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-enum REWARD_TYPE {
-    ADD_ARMOR,
-    ADD_ARMOR_DAMAGE,
-    ADD_POTION,
-    ADD_FOOD,
-    ADD_ARROWS,
-    REDUCE_MANA_COST,
-    ADD_SPELL_EFFICIENCY
-}
-
 public class Game {
     protected int playerTurn;
     protected InputParser inputParser;

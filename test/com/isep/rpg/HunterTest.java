@@ -7,8 +7,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class HunterTest {
     @Test
     public void testArrowsDecrease(){
-        Hunter hunter = new Hunter(45);
-        hunter.shutArrow();
+        int lifePoints = 45;
+        int armor = 45;
+        int weaponDamage = 45;
+        Hunter hunter = new Hunter(lifePoints, armor, weaponDamage);
+        hunter.attack(Attack.arrow);
         assertEquals(44, hunter.getArrows());
     }
 }

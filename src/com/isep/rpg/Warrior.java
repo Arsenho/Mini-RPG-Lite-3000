@@ -10,4 +10,9 @@ public class Warrior extends Hero{
         potions = new ArrayList<>();
         lembas = new ArrayList<>();
     }
+
+    public Warrior(int lifePoints, int armor, int weaponDamage) {
+        super(lifePoints, armor, weaponDamage);
+        System.out.println("create new warrior with life Points = " +this.lifePoints + " armor = " +this.armor + " weaponDamage = " + this.weaponDamage);
+    }
 }

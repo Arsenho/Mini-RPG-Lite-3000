@@ -3,6 +3,14 @@ package com.isep.rpg;
 public abstract class SpellCaster extends Hero{
     protected  int manaPoints;
 
+    public SpellCaster(){
+
+    }
+
+    public SpellCaster(int lifePoints, int armor, int weaponDamage){
+        super(lifePoints, armor, weaponDamage);
+    }
+
     public int getManaPoints(){
         return this.manaPoints;
     }

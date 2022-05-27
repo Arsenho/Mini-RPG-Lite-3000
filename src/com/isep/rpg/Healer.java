@@ -10,4 +10,9 @@ public class Healer extends SpellCaster{
         potions = new ArrayList<>();
         lembas = new ArrayList<>();
     }
+
+    public Healer(int lifePoints, int armor, int weaponDamage) {
+        super(lifePoints, armor, weaponDamage);
+        System.out.println("create new healer with life Points = " +this.lifePoints + " armor = " +this.armor + " weaponDamage = " + this.weaponDamage);
+    }
 }

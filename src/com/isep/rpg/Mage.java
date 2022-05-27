@@ -10,4 +10,9 @@ public class Mage extends SpellCaster{
         potions = new ArrayList<>();
         lembas = new ArrayList<>();
     }
+
+    public Mage(int lifePoints, int armor, int weaponDamage) {
+        super(lifePoints, armor, weaponDamage);
+        System.out.println("create new mage with life Points = " +this.lifePoints + " armor = " +this.armor + " weaponDamage = " + this.weaponDamage);
+    }
 }
