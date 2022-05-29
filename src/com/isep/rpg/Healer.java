@@ -11,8 +11,15 @@ public class Healer extends SpellCaster{
         lembas = new ArrayList<>();
     }
 
-    public Healer(int lifePoints, int armor, int weaponDamage) {
-        super(lifePoints, armor, weaponDamage);
-        System.out.println("create new healer with life Points = " +this.lifePoints + " armor = " +this.armor + " weaponDamage = " + this.weaponDamage);
+    public Healer(int lifePoints, int armor, int weaponDamage, int manaPoints) {
+        super(lifePoints, armor, weaponDamage, manaPoints);
+        System.out.println("create new healer with life Points = " +this.lifePoints + " armor = " +this.armor + " weaponDamage = " + this.weaponDamage + " mana points = " + manaPoints);
     }
+
+    @Override
+    public Attack attack(Attack attack) {
+        this.canCastSpell("SUPER");
+        return super.attack(attack);
+    }
+
 }

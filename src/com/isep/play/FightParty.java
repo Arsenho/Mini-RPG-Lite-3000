@@ -22,7 +22,7 @@ public class FightParty {
 
     private void initHeroes(){
         Random random = new Random();
-        int lifePoints, weaponDamage, armor;
+        int lifePoints, weaponDamage, armor, manaPoints;
         Hero hunter, healer, mage, warrior;
 
         lifePoints = random.nextInt(30, lifePointBound);
@@ -35,15 +35,17 @@ public class FightParty {
         lifePoints = random.nextInt(30, lifePointBound);
         weaponDamage = random.nextInt(30, lifePointBound);
         armor = random.nextInt(30, lifePointBound);
+        manaPoints = random.nextInt(30, lifePointBound);
 
-        healer = new Healer(lifePoints, armor, weaponDamage);
+        healer = new Healer(lifePoints, armor, weaponDamage, manaPoints);
         heroes.add(healer);
 
         lifePoints = random.nextInt(30, lifePointBound);
         weaponDamage = random.nextInt(30, lifePointBound);
         armor = random.nextInt(30, lifePointBound);
+        manaPoints = random.nextInt(30, lifePointBound);
 
-        mage = new Mage(lifePoints, armor, weaponDamage);
+        mage = new Mage(lifePoints, armor, weaponDamage, manaPoints);
         heroes.add(mage);
 
         lifePoints = random.nextInt(30, lifePointBound);
@@ -89,7 +91,7 @@ public class FightParty {
     public void receiveCompensation(){
         System.out.println("receiving compensation wouf wouf !!!!");
         Random random = new Random();
-        int chooseCompensation = random.nextInt(0, 7);
+        int chooseCompensation = random.nextInt(0, 8);
         int compensation = 0;
         for (Hero hero : this.heroes) {
             switch (chooseCompensation){
@@ -131,6 +133,12 @@ public class FightParty {
                     compensation = random.nextInt(5, 10);
                     if (Hunter.class.isInstance(hero)) {
                         ((Hunter) hero).addArrow(compensation);
+                    }
+                    break;
+                case 7:
+                    compensation = random.nextInt(5, 10);
+                    if (SpellCaster.class.isInstance(hero)) {
+                        ((SpellCaster) hero).addManaPoints(compensation);
                     }
                     break;
             }

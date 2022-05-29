@@ -4,7 +4,15 @@ public abstract class SpellCaster extends Hero{
     protected  int manaPoints;
 
     public SpellCaster(){
+    }
 
+    public SpellCaster(int manaPoints){
+        this.manaPoints = manaPoints;
+    }
+
+    public SpellCaster(int lifePoints, int armor, int weaponDamage, int manaPoints){
+        super(lifePoints, armor, weaponDamage);
+        this.manaPoints = manaPoints;
     }
 
     public SpellCaster(int lifePoints, int armor, int weaponDamage){
@@ -45,5 +53,9 @@ public abstract class SpellCaster extends Hero{
                 break;
         }
         return res;
+    }
+
+    public void addManaPoints(int quantity) {
+        this.manaPoints += quantity;
     }
 }
